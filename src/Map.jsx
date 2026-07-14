@@ -1,6 +1,7 @@
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { events, MAP_CENTER, MAP_ZOOM } from "./data/events";
 import { pinIcon } from "./pinIcon";
+import EventCard from "./EventCard";
 import "./Map.css";
 
 export default function Map() {
@@ -13,7 +14,9 @@ export default function Map() {
             
             {events.map((event) => (
                 <Marker key={event.id} position={[event.lat, event.lng]} icon={pinIcon}>
-                    <Popup>{event.name}</Popup>
+                    <Popup closeButton={true}>
+                        <EventCard event={event}></EventCard>
+                    </Popup>
                 </Marker>
             ))}
         </MapContainer>
