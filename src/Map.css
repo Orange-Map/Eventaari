@@ -1,0 +1,31 @@
+/* the pin */
+.event-pin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    height: 20px;
+    border: 2px solid #fff;
+    
+    /* these make a pin icon */
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    
+    background: #0d780d;
+    /* TODO add box shadow for contrast */
+    
+    transition: transform 0.15s ease;
+}
+
+/* the dot inside the pin */
+.event-pin__dot {
+    width: 6px;
+    height: 6px;
+
+    background: #fff;
+    border-radius: 50%;
+}
+
+/* hover anim */
+.event-pin:hover { transform: rotate(-45deg) scale(1.15); }
