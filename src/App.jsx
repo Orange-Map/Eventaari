@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { getEvents } from './api'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -6,7 +7,16 @@ import './App.css'
 import Map from './Map.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const [events, setEvents] = useState([]);
+
+  // ai written code, needs to be checked
+  useEffect(() => {
+      getEvents().then(data => {
+          console.log("events from db: ", data);
+          setEvents(data);
+      });
+  }, []);
 
   return (
     <>
@@ -33,7 +43,7 @@ function App() {
 
       <div className="ticks"></div>
 
-      <Map />
+      <Map events={events} />
 
       <section id="next-steps">
         <div id="docs">
