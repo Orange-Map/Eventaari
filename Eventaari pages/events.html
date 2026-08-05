@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventaari Events Page</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Offline JavaScript for filters, calendar and create-event demo -->
+  <script src="script.js" defer></script>
+</head>
+<body data-page="events">
+
+  <!-- =====================================================
+       HEADER
+       Logo + navigation + XP/profile area
+  ====================================================== -->
+  <header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="index.html">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <span>Eventaari</span>
+      </a>
+
+      <button class="hamburger-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a class="active" href="events.html">Events</a>
+        <a href="community.html">Community</a>
+        <a href="index.html#map">Map</a>
+        <a href="housing.html">Housing</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="profile-area">
+      <div class="xp-box">
+        <div class="xp-top">
+          <strong>Level 1</strong>
+          <span>1375 / 2000 XP</span>
+        </div>
+
+        <div class="xp-bar">
+          <div class="xp-fill"></div>
+        </div>
+      </div>
+
+      <button class="avatar-button" aria-label="Open profile menu" aria-expanded="false">
+        <img src="assets/profile-picture.png" alt="Profile picture" />
+      </button>
+
+      <div class="profile-menu" aria-label="Profile actions">
+        <button type="button" data-profile-popup="profile">Profile</button>
+        <button type="button" data-profile-popup="badges">Badges / achievements</button>
+        <button type="button" data-profile-popup="signin">Sign in / Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content events-page-content">
+
+    <!-- =====================================================
+         EVENT SEARCH AND FILTERS
+    ====================================================== -->
+    <section class="event-search-panel">
+      <div class="search-header-row">
+        <div>
+          <p class="eyebrow">Events page</p>
+          <h1>Search events</h1>
+        </div>
+
+        <div class="matching-counter">
+          <strong id="event-count-number">0</strong>
+          <span>matching events</span>
+        </div>
+      </div>
+
+      <label class="input-label" for="event-search">Search by name, category or location</label>
+      <input id="event-search" class="search-input" type="search" placeholder="Try Music, Isengard or Space Food" />
+
+      <div class="filter-row" id="event-filter-row" aria-label="Event category filters">
+        <button class="filter-pill active" data-filter="All" type="button">All</button>
+        <button class="filter-pill" data-filter="Music" type="button">Music</button>
+        <button class="filter-pill" data-filter="Culture" type="button">Culture</button>
+        <button class="filter-pill" data-filter="Sports" type="button">Sports</button>
+        <button class="filter-pill" data-filter="Food" type="button">Food</button>
+        <button class="filter-pill" data-filter="Community" type="button">Community</button>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EVENT CARDS
+    ====================================================== -->
+    <section class="events-section">
+      <div class="section-title-row">
+        <div>
+          <p class="eyebrow">Browse</p>
+          <h2>Event cards</h2>
+        </div>
+
+        <button class="button button-primary small-button" id="open-create-event" type="button">Create event</button>
+      </div>
+
+      <div class="event-grid full-event-grid" id="events-grid"></div>
+      <p class="empty-message hidden" id="events-empty-message">No events match your search. Try another category or search word.</p>
+    </section>
+
+    <!-- =====================================================
+         EVENT CALENDAR
+         This is a real calendar grid, not a list.
+    ====================================================== -->
+    <section class="calendar-panel" aria-label="Event calendar">
+      <div class="section-title-row">
+        <div>
+          <p class="eyebrow">Calendar</p>
+          <h2>Example calendar</h2>
+        </div>
+
+        <div class="calendar-controls">
+          <button class="icon-button" id="calendar-prev" type="button" aria-label="Previous month">‹</button>
+          <strong id="calendar-title">Month</strong>
+          <button class="icon-button" id="calendar-next" type="button" aria-label="Next month">›</button>
+        </div>
+      </div>
+
+      <div class="calendar-jump-row" id="calendar-jump-row" aria-label="Jump to event month"></div>
+
+      <div class="calendar-grid" id="calendar-grid"></div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       CREATE EVENT MODAL
+  ====================================================== -->
+  <div class="modal-backdrop hidden" id="event-modal" role="dialog" aria-modal="true" aria-labelledby="event-modal-title">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="event-modal-title">Create test event</h2>
+        <button class="close-button" id="close-create-event" aria-label="Close form" type="button">×</button>
+      </div>
+
+      <form id="create-event-form" class="event-form">
+        <label>Event name<input required name="title" type="text" placeholder="Example event" /></label>
+        <label>Category
+          <select name="category" required>
+            <option>Music</option>
+            <option>Culture</option>
+            <option>Sports</option>
+            <option>Food</option>
+            <option>Community</option>
+          </select>
+        </label>
+        <label>Date<input required name="date" type="date" /></label>
+        <label>Time<input required name="time" type="time" /></label>
+        <label>Location<input required name="location" type="text" placeholder="Location name" /></label>
+        <label class="full-width">Short description<textarea name="description" rows="4" placeholder="What is this event about?"></textarea></label>
+        <button class="button button-primary full-width" type="submit">Add event</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+          <strong>Eventaari</strong>
+        </div>
+        <p>Discover events and places...</p>
+        <button class="footer-popup-button" type="button" data-profile-popup="profile">Open profile popup</button>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html#map">Map</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="housing.html">Housing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Event tools</h3>
+        <ul>
+          <li><a href="#">Search</a></li>
+          <li><a href="#">Filters</a></li>
+          <li><a href="#">Calendar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Business</h3>
+        <ul>
+          <li><a href="partners.html">For partners</a></li>
+          <li><a href="events.html">Create event</a></li>
+          <li><a href="partners.html#sponsored-pins">Sponsored pins</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Offline demo</h3>
+        <p>No external libraries or internet connection required.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Eventaari</span>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of use</a>
+    </div>
+  </footer>
+</body>
+</html>

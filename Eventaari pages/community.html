@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventaari Community Page</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Offline JavaScript for challenges, badges and leaderboard placeholders -->
+  <script src="script.js" defer></script>
+</head>
+<body data-page="community">
+
+  <!-- =====================================================
+       HEADER
+       Logo + navigation + XP/profile area
+  ====================================================== -->
+  <header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="index.html">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <span>Eventaari</span>
+      </a>
+
+      <button class="hamburger-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a class="active" href="community.html">Community</a>
+        <a href="index.html#map">Map</a>
+        <a href="housing.html">Housing</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="profile-area">
+      <div class="xp-box">
+        <div class="xp-top">
+          <strong>Level 1</strong>
+          <span>1375 / 2000 XP</span>
+        </div>
+
+        <div class="xp-bar">
+          <div class="xp-fill"></div>
+        </div>
+      </div>
+
+      <button class="avatar-button" aria-label="Open profile menu" aria-expanded="false">
+        <img src="assets/profile-picture.png" alt="Profile picture" />
+      </button>
+
+      <div class="profile-menu" aria-label="Profile actions">
+        <button type="button" data-profile-popup="profile">Profile</button>
+        <button type="button" data-profile-popup="badges">Badges / achievements</button>
+        <button type="button" data-profile-popup="signin">Sign in / Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content community-page-content">
+
+    <!-- =====================================================
+         COMMUNITY INTRO
+    ====================================================== -->
+    <section class="community-intro-panel">
+      <div>
+        <p class="eyebrow">Community page</p>
+        <h1>Gain rewards from local activities</h1>
+        <p>
+          lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nunc, eget aliquam nisl nunc eget nunc. Sed euismod, nunc ut aliquam aliquam, nunc nisl aliquet nunc, eget aliquam nisl nunc eget nunc.
+        </p>
+      </div>
+
+      <div class="hero-stat-card">
+        <strong id="completed-challenge-count">0</strong>
+        <span>completed challenges</span>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         CURRENT LEVEL
+         Uses the same XP amount as the header progress bar.
+    ====================================================== -->
+    <section class="profile-progress-panel">
+      <div class="text-panel compact-panel">
+        <p class="eyebrow">Current level</p>
+        <h2 id="community-level-title">Level 1 Explorer</h2>
+        <p class="level-current-xp" id="community-current-xp">1375 / 2000 XP</p>
+        <p><span id="community-xp-needed">625</span> XP needed for the next level.</p>
+        <div class="xp-bar large"><div class="xp-fill" id="community-xp-fill"></div></div>
+      </div>
+
+      <div class="text-panel compact-panel">
+        <p class="eyebrow">Profile</p>
+        <h2>Badges + levels</h2>
+        <p>This could show something related to the profile.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         ACHIEVEMENTS + LEADERBOARD
+         Placed side by side so the community progress is visible
+         before the local challenge cards.
+    ====================================================== -->
+    <div class="community-top-grid">
+      <section id="badges" class="community-section badges-section">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">Achievements</p>
+            <h2>Student badges/achievements</h2>
+          </div>
+        </div>
+
+        <div class="badge-grid" id="badge-grid"></div>
+      </section>
+
+      <section class="community-section leaderboard-section">
+        <div class="section-title-row compact-title">
+          <div>
+            <p class="eyebrow">Progress</p>
+            <h2>Leaderboard</h2>
+          </div>
+        </div>
+
+        <div class="leaderboard-list" id="leaderboard-list"></div>
+      </section>
+    </div>
+
+    <!-- =====================================================
+         LOCAL CHALLENGES
+    ====================================================== -->
+    <section class="community-section">
+      <div class="section-title-row">
+        <div>
+          <p class="eyebrow">daily tasks</p>
+          <h2>Local challenges</h2>
+        </div>
+
+        <button class="button button-secondary small-button" id="reset-community-progress" type="button">Reset progress</button>
+      </div>
+
+      <div class="challenge-grid" id="challenge-grid"></div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+          <strong>Eventaari</strong>
+        </div>
+        <p>Discover events and places...</p>
+        <button class="footer-popup-button" type="button" data-profile-popup="profile">Open profile popup</button>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="index.html#map">Map</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="housing.html">Housing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Community</h3>
+        <ul>
+          <li><a href="#badges">Badges</a></li>
+          <li><a href="#">Challenges</a></li>
+          <li><a href="#">Leaderboard</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Business</h3>
+        <ul>
+          <li><a href="partners.html">For partners</a></li>
+          <li><a href="events.html#create-event">Create event</a></li>
+          <li><a href="partners.html#sponsored-pins">Sponsored pins</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Offline demo</h3>
+        <p>Challenge progress is stored only in this browser.</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Eventaari</span>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of use</a>
+    </div>
+  </footer>
+</body>
+</html>

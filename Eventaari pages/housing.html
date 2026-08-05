@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventaari Housing</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body data-page="housing">
+
+<header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="index.html">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <span>Eventaari</span>
+      </a>
+
+      <button class="hamburger-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="community.html">Community</a>
+        <a href="index.html#map">Map</a>
+        <a class="active" href="housing.html">Housing</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="profile-area">
+      <div class="xp-box">
+        <div class="xp-top">
+          <strong>Level 1</strong>
+          <span>1375 / 2000 XP</span>
+        </div>
+
+        <div class="xp-bar">
+          <div class="xp-fill"></div>
+        </div>
+      </div>
+
+      <button class="avatar-button" aria-label="Open profile menu" aria-expanded="false">
+        <img src="assets/profile-picture.png" alt="Profile picture" />
+      </button>
+
+      <div class="profile-menu" aria-label="Profile actions">
+        <button type="button" data-profile-popup="profile">Profile</button>
+        <button type="button" data-profile-popup="badges">Badges / achievements</button>
+        <button type="button" data-profile-popup="signin">Sign in / Sign out</button>
+      </div>
+    </div>
+  </header>
+
+
+<main class="page-content inner-page">
+  <section class="page-hero housing-hero">
+    <div>
+      <p class="eyebrow">Housing</p>
+      <h1>Find student housing and useful living options around the area.</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <div class="button-row hero-buttons">
+        <a href="#housing-listings" class="button button-primary">Browse housing</a>
+        <a href="#housing-info" class="button button-secondary">Read info</a>
+      </div>
+    </div>
+    <div class="hero-side-card housing-side-card">
+      <span class="small-label">Housing status</span>
+      <h2>4 example listings</h2>
+      <p>These are placeholder cards to show how the page could work visually.</p>
+    </div>
+  </section>
+
+  <section class="filter-panel">
+    <div>
+      <label>Search</label>
+      <input type="text" placeholder="Search by city, campus or street" />
+    </div>
+    <div>
+      <label>Type</label>
+      <select>
+        <option>Any type</option>
+        <option>Studio</option>
+        <option>Shared apartment</option>
+        <option>Temporary room</option>
+      </select>
+    </div>
+    <div>
+      <label>Price</label>
+      <select>
+        <option>Any price</option>
+        <option>Under 500 €</option>
+        <option>500–700 €</option>
+        <option>700 € +</option>
+      </select>
+    </div>
+    <button class="button button-primary" type="button">Search</button>
+  </section>
+
+  <section id="housing-listings" class="content-section">
+    <div class="section-title-row">
+      <h2>Housing examples</h2>
+      <a href="#">View map →</a>
+    </div>
+
+    <div class="housing-layout">
+      <div class="housing-grid">
+        <article class="housing-card">
+          <div class="housing-image studio-image"><span>Studio</span></div>
+          <div class="housing-info">
+            <h3>Small studio near campus</h3>
+            <p>📍 Hämeenlinna centre</p>
+            <p>Available from August</p>
+            <div class="tag-row"><span>1 room</span><span>Student friendly</span><span>520 € / month</span></div>
+          </div>
+        </article>
+        <article class="housing-card">
+          <div class="housing-image shared-image"><span>Shared</span></div>
+          <div class="housing-info">
+            <h3>Shared apartment room</h3>
+            <p>📍 Close to bus route</p>
+            <p>Suitable for exchange students</p>
+            <div class="tag-row"><span>Room</span><span>Shared kitchen</span><span>390 € / month</span></div>
+          </div>
+        </article>
+        <article class="housing-card">
+          <div class="housing-image temporary-image"><span>Temporary</span></div>
+          <div class="housing-info">
+            <h3>Temporary room option</h3>
+            <p>📍 Near city services</p>
+            <p>Short-term placeholder listing</p>
+            <div class="tag-row"><span>Short stay</span><span>Flexible</span><span>Ask price</span></div>
+          </div>
+        </article>
+        <article class="housing-card">
+          <div class="housing-image service-image"><span>Service</span></div>
+          <div class="housing-info">
+            <h3>Student housing queue</h3>
+            <p>📍 Online service</p>
+            <p>Information card for official housing services</p>
+            <div class="tag-row"><span>Info</span><span>Application</span><span>External link</span></div>
+          </div>
+        </article>
+      </div>
+
+      <aside class="map-card">
+        <div class="small-map-preview"></div>
+        <h3>Housing map placeholder</h3>
+        <p>The housing page could also connect listings to the same map system as events and places.</p>
+        <a href="index.html#map" class="button button-secondary">Open map</a>
+      </aside>
+    </div>
+  </section>
+
+  <section id="housing-info" class="split-section">
+    <div class="text-panel">
+      <p class="eyebrow">Housing information</p>
+      <h2>Keep housing cards clear and safe.</h2>
+      <p>
+        Housing content should focus on useful details like location, price range, availability, room type and trusted contact information. The page should avoid feeling like a random marketplace.
+      </p>
+    </div>
+    <div class="check-list-panel">
+      <h3>Useful details</h3>
+      <ul>
+        <li>Price and availability</li>
+        <li>Distance to campus or transport</li>
+        <li>Room type and basic features</li>
+        <li>Clear contact or application link</li>
+        <li>Safety note for user trust</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <strong>Eventaari</strong>
+      </div>
+      <p>Discover events and places around your area.</p>
+      <div class="social-icons">
+        <span>◎</span>
+        <span>f</span>
+        <span>x</span>
+        <span>in</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="index.html#map">Map</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="housing.html">Housing</a></li>
+        <li><a href="#">Categories</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Business</h3>
+      <ul>
+        <li><a href="partners.html">For partners</a></li>
+        <li><a href="partners.html#sponsored-pins">Sponsored pins</a></li>
+        <li><a href="partners.html#collaboration">Collaboration</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Find us on Mobile!</h3>
+      <p>For best experience, download our app!</p>
+      <div class="store-badges">
+        <span>App Store</span>
+        <span>Google Play</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Eventaari</span>
+    <a href="#">Privacy policy</a>
+    <a href="#">Terms of use</a>
+  </div>
+</footer>
+
+</body>
+</html>
