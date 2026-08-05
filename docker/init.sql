@@ -11,6 +11,9 @@ CREATE TABLE IF NOT EXISTS events (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+-- crud for anon 
+GRANT INSERT, UPDATE, DELETE ON events TO anon;
+
 -- inserting fake data for testing purp
 INSERT INTO events (id, name, description, address, starts_at, lat, lng) VALUES
 (1, 'Mellakka Festival', 'Some festival with a lot of rappers.', 'Kustaa III:n katu 6, Hämeenlinna', '2026-07-18T18:00', 61.0067, 24.4522),
