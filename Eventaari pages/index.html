@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventaari Landing Page</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Offline JavaScript for mobile menu and small interactions -->
+  <script src="script.js" defer></script>
+</head>
+<body data-page="home">
+
+  <!-- =====================================================
+       HEADER
+       Logo + navigation + XP/profile area
+  ====================================================== -->
+  <header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="index.html">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <span>Eventaari</span>
+      </a>
+
+      <button class="hamburger-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+        <a class="active" href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="community.html">Community</a>
+        <a href="index.html#map">Map</a>
+        <a href="housing.html">Housing</a>
+        <a href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="profile-area">
+      <div class="xp-box">
+        <div class="xp-top">
+          <strong>Level 1</strong>
+          <span>1375 / 2000 XP</span>
+        </div>
+
+        <div class="xp-bar">
+          <div class="xp-fill"></div>
+        </div>
+      </div>
+
+      <button class="avatar-button" aria-label="Open profile menu" aria-expanded="false">
+        <img src="assets/profile-picture.png" alt="Profile picture" />
+      </button>
+
+      <div class="profile-menu" aria-label="Profile actions">
+        <button type="button" data-profile-popup="profile">Profile</button>
+        <button type="button" data-profile-popup="badges">Badges / achievements</button>
+        <button type="button" data-profile-popup="signin">Sign in / Sign out</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-content">
+
+    <!-- =====================================================
+         HERO MAP PLACEHOLDER
+         Replace this placeholder with a real map later.
+    ====================================================== -->
+    <section id="map" class="hero-map-section">
+      <div class="map-preview">
+        <span class="map-label">Map placeholder image</span>
+      </div>
+
+      <button class="map-slider" aria-label="Open full map"></button>
+      <p class="map-slider-text">Open full map</p>
+    </section>
+
+    <!-- =====================================================
+         WELCOME / MAIN CALL TO ACTION
+    ====================================================== -->
+    <section class="welcome-card">
+      <div>
+        <h1>Welcome to <span>Eventaari</span></h1>
+
+        <p>
+          Eventaari helps students and local communities discover events, places,
+          activities, housing options and shared experiences around them.
+        </p>
+      </div>
+
+      <div class="button-row">
+        <a href="#map" class="button button-primary">Explore the map</a>
+        <a href="events.html" class="button button-secondary">Browse events</a>
+        <a href="housing.html" class="button button-secondary">Housing</a>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         EVENT CAROUSEL MOCKUP
+         Currently visual only.
+    ====================================================== -->
+    <section id="events" class="events-section">
+      <div class="section-title-row">
+        <h2>Popular around you</h2>
+        <a href="events.html">View all →</a>
+      </div>
+
+      <div class="carousel-layout">
+        <button class="carousel-arrow" aria-label="Previous events" data-carousel-direction="prev">‹</button>
+
+        <div class="event-grid home-event-grid">
+          <article class="event-card">
+            <div class="event-image music-image"><span>Music</span></div>
+            <div class="event-info">
+              <h3>Fight club Festival</h3>
+              <p>24.09.1984 · 18:00</p>
+              <p>📍 Land somewhere far</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-image culture-image"><span>Culture</span></div>
+            <div class="event-info">
+              <h3>Lorem ipsum Exhibition Night</h3>
+              <p>25.01.2028 · 12:00</p>
+              <p>📍 Isengard</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-image sports-image"><span>Sports</span></div>
+            <div class="event-info">
+              <h3>Does anybody even read these?</h3>
+              <p>26.02.3000 · 10:00</p>
+              <p>📍 The sun</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-image food-image"><span>Food</span></div>
+            <div class="event-info">
+              <h3>Space Food Market</h3>
+              <p>27.02.2029 · 16:00</p>
+              <p>📍 In the spaceship</p>
+            </div>
+          </article>
+
+          <article class="event-card">
+            <div class="event-image community-image"><span>Community</span></div>
+            <div class="event-info">
+              <h3>Community Heist</h3>
+              <p>28.08.2035 · 14:00</p>
+              <p>📍 it's a secret</p>
+            </div>
+          </article>
+        </div>
+
+        <button class="carousel-arrow" aria-label="Next events" data-carousel-direction="next">›</button>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         HOW TO USE EVENTAARI
+    ====================================================== -->
+    <section class="steps-section">
+      <h2>How to use Eventaari</h2>
+
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-number">1</div>
+          <h3>Explore the map</h3>
+          <p>See events, places and useful locations around you.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">2</div>
+          <h3>Choose a place</h3>
+          <p>Open an event or location card that interests you.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">3</div>
+          <h3>Check details</h3>
+          <p>Read the time, location, category and basic information.</p>
+        </article>
+
+        <article class="step-card">
+          <div class="step-number">4</div>
+          <h3>Join or save</h3>
+          <p>Plan your visit and collect experience and rewards through activities.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         HOUSING PLACEHOLDER
+         This is kept as a small placeholder because the header links to it.
+    ====================================================== -->
+    <section id="housing" class="text-panel housing-section">
+      <div>
+        <p class="eyebrow">Future feature</p>
+        <h2>Housing and useful places</h2>
+        <p>
+          Later, Eventaari could also show useful student housing information and practical local places through the same map-based idea.
+        </p>
+      </div>
+      <a href="#map" class="button button-secondary">Back to map</a>
+    </section>
+
+    <!-- =====================================================
+         BUSINESS PARTNERS
+    ====================================================== -->
+    <section id="partners" class="partner-section">
+      <div>
+        <h2>For business partners</h2>
+        <p>
+          Businesses and organisations can use Eventaari for sponsored pins,
+          promoted events and collaboration opportunities. This feature is currently in development and will be available in the future.
+        </p>
+      </div>
+
+      <a class="button button-primary" href="partners.html">Partner with us</a>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+          <strong>Eventaari</strong>
+        </div>
+        <p>Discover events and places...</p>
+        <button class="footer-popup-button" type="button" data-profile-popup="profile">Open profile popup</button>
+        <div class="social-icons">
+          <span>◎</span>
+          <span>f</span>
+          <span>x</span>
+          <span>in</span>
+        </div>
+      </div>
+
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#map">Map</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="housing.html">Housing</a></li>
+          <li><a href="community.html">Community</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Feedback</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Business</h3>
+        <ul>
+          <li><a href="partners.html">For partners</a></li>
+          <li><a href="partners.html#sponsored-pins">Sponsored pins</a></li>
+          <li><a href="partners.html#collaboration">Collaboration</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Find us on Mobile!</h3>
+        <p>For best experience, download our app!</p>
+        <div class="store-badges">
+          <span>App Store</span>
+          <span>Google Play</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Eventaari</span>
+      <a href="#">Privacy policy</a>
+      <a href="#">Terms of use</a>
+    </div>
+  </footer>
+</body>
+</html>

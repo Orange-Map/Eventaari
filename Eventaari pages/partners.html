@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eventaari Partners</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body data-page="partners">
+
+<header class="site-header">
+    <div class="header-left">
+      <a class="brand" href="index.html">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <span>Eventaari</span>
+      </a>
+
+      <button class="hamburger-button" aria-label="Open navigation" aria-expanded="false" aria-controls="main-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="main-navigation" class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="community.html">Community</a>
+        <a href="index.html#map">Map</a>
+        <a href="housing.html">Housing</a>
+        <a class="active" href="partners.html">Partners</a>
+      </nav>
+    </div>
+
+    <div class="profile-area">
+      <div class="xp-box">
+        <div class="xp-top">
+          <strong>Level 1</strong>
+          <span>1375 / 2000 XP</span>
+        </div>
+
+        <div class="xp-bar">
+          <div class="xp-fill"></div>
+        </div>
+      </div>
+
+      <button class="avatar-button" aria-label="Open profile menu" aria-expanded="false">
+        <img src="assets/profile-picture.png" alt="Profile picture" />
+      </button>
+
+      <div class="profile-menu" aria-label="Profile actions">
+        <button type="button" data-profile-popup="profile">Profile</button>
+        <button type="button" data-profile-popup="badges">Badges / achievements</button>
+        <button type="button" data-profile-popup="signin">Sign in / Sign out</button>
+      </div>
+    </div>
+  </header>
+
+
+<main class="page-content inner-page">
+  <section class="page-hero partners-hero">
+    <div>
+      <p class="eyebrow">For partners</p>
+      <h1>Reach students and local communities through Eventaari.</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nunc.
+      </p>
+      <div class="button-row hero-buttons">
+        <a href="#partner-request" class="button button-primary">Partner with us</a>
+        <a href="#partner-options" class="button button-secondary">See options</a>
+      </div>
+    </div>
+    <div class="hero-side-card">
+      <span class="small-label">Example visibility</span>
+      <h2>Sponsored map pin</h2>
+      <p>Promote a place, event or student offer directly where users are already exploring.</p>
+    </div>
+  </section>
+
+  <section id="partner-options" class="content-section">
+    <div class="section-title-row">
+      <h2>Partner options</h2>
+      <a href="#partner-request">Request info →</a>
+    </div>
+
+    <div class="feature-grid four-columns">
+      <article class="feature-card" id="sponsored-pins">
+        <div class="feature-icon">📍</div>
+        <h3>Sponsored pins</h3>
+        <p>Show partner locations or offers on the map so users can discover them while browsing nearby places.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">🎟️</div>
+        <h3>Promoted events</h3>
+        <p>Give important events more visibility on the landing page, event carousel or event listings.</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon">🏷️</div>
+        <h3>Student offers</h3>
+        <p>Add discounts, campaigns or simple student-friendly benefits that fit the Eventaari audience.</p>
+      </article>
+      <article class="feature-card" id="collaboration">
+        <div class="feature-icon">🤝</div>
+        <h3>Collaboration</h3>
+        <p>Create campaigns together with local organisations, campuses, student groups or event organisers.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="split-section">
+    <div class="text-panel">
+      <p class="eyebrow">Why it matters</p>
+      <h2>Better visibility for your services and products.</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget ultricies tincidunt, nunc nisl aliquam nisl, eget ultricies nunc nisl eget nunc.
+      </p>
+    </div>
+
+    <div class="check-list-panel">
+      <h3>Possible incentives</h3>
+      <ul>
+        <li>Visibility on the map</li>
+        <li>Promoted event placement</li>
+        <li>Sponsored pins for local places</li>
+        <li>Campaigns aimed at students</li>
+        <li>Partner page listing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="partner-request" class="form-section">
+    <div>
+      <p class="eyebrow">Contact placeholder</p>
+      <h2>Partner request</h2>
+      <p>This form is only a visual placeholder for now. Later it could send the request to the team or open an email draft.</p>
+    </div>
+
+    <form class="mock-form">
+      <label>
+        Organisation name
+        <input type="text" placeholder="Example organisation" />
+      </label>
+      <label>
+        Contact email
+        <input type="email" placeholder="contact@example.com" />
+      </label>
+      <label>
+        Interested in
+        <select>
+          <option>Sponsored pins</option>
+          <option>Promoted events</option>
+          <option>Student offers</option>
+          <option>Other collaboration</option>
+        </select>
+      </label>
+      <label>
+        Message
+        <textarea placeholder="Write short details here"></textarea>
+      </label>
+      <button class="button button-primary" type="button">Send request</button>
+    </form>
+  </section>
+</main>
+
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="assets/eventaari-logo.png" alt="Eventaari logo" />
+        <strong>Eventaari</strong>
+      </div>
+      <p>Discover events and places around your area.</p>
+      <div class="social-icons">
+        <span>◎</span>
+        <span>f</span>
+        <span>x</span>
+        <span>in</span>
+      </div>
+    </div>
+
+    <div>
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="index.html#map">Map</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="housing.html">Housing</a></li>
+        <li><a href="#">Categories</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Support</h3>
+      <ul>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Business</h3>
+      <ul>
+        <li><a href="partners.html">For partners</a></li>
+        <li><a href="partners.html#sponsored-pins">Sponsored pins</a></li>
+        <li><a href="partners.html#collaboration">Collaboration</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3>Find us on Mobile!</h3>
+      <p>For best experience, download our app!</p>
+      <div class="store-badges">
+        <span>App Store</span>
+        <span>Google Play</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Eventaari</span>
+    <a href="#">Privacy policy</a>
+    <a href="#">Terms of use</a>
+  </div>
+</footer>
+
+</body>
+</html>
