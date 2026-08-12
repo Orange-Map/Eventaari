@@ -20,7 +20,7 @@ export default function EventCard({ event }) {
                 <time dateTime={event.starts_at}>{formatDate(event.starts_at)}</time>
             </p>
 
-            <p className="event-card-meta event-card-address">{event.address}</p>
+            <p className="event-card-meta event-card-address">{event.locations?.address}</p>
 
             <p className="event-card-description">{event.description}</p>
 
@@ -28,4 +28,3 @@ export default function EventCard({ event }) {
         </article>
     );
 }
-

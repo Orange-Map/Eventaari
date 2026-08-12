@@ -12,8 +12,8 @@ export default function Map({ events }) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             
-            {events && events.map((event) => (
-                <Marker key={event.id} position={[event.lat, event.lng]} icon={pinIcon}>
+            {events && events.filter(e => e.locations).map((event) => (
+                <Marker key={event.id} position={[event.locations.lat, event.locations.lng]} icon={pinIcon}>
                     <Popup closeButton={true}>
                         <EventCard event={event}></EventCard>
                     </Popup>

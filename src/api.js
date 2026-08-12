@@ -3,14 +3,20 @@ const ANON_KEY = import.meta.env.VITE_ANON_KEY;
 
 const HEADERS = {
     'apikey': ANON_KEY,
+    'Authorization': `Bearer ${ANON_KEY}`,
     'Content-Type': 'application/json',
 };
+
+const EVENTS_SELECT = 'select=*,locations(*),categories(*)';
 
 export async function getEvents()
 {
     try
     {
-        const response = await fetch(`${API_URL}/events`, { headers: { 'apikey': ANON_KEY } });
+        const response = await fetch(
+            `${API_URL}/events?${EVENTS_SELECT}&published=eq.true`,
+            { headers: HEADERS }
+        );
 
         if (!response.ok) { throw new Error(`api error: ${response.status}`); }
 
@@ -26,9 +32,10 @@ export async function getEvents()
 
 export async function createEvent(event)
 {
+    // event must have location_id and category_id
     try
     {
-        const response = await fetch(`${API_URL}/events`, {
+        const response = await fetch(`${API_URL}/events?${EVENTS_SELECT}`, {
             method: 'POST',
             headers: { ...HEADERS, 'Prefer': 'return=representation' },
             body: JSON.stringify(event),
@@ -46,11 +53,33 @@ export async function createEvent(event)
     }
 }
 
+export async function createLocation(location)
+{
+    try
+    {
+        const response = await fetch(`${API_URL}/locations`, {
+            method: 'POST',
+            headers: { ...HEADERS, 'Prefer': 'return=representation' },
+            body: JSON.stringify(location),
+        });
+
+        if (!response.ok) { throw new Error(`api error: ${response.status}`); }
+
+        const [created] = await response.json();
+        return created;
+    }
+    catch (error)
+    {
+        console.error('failed to create location: ', error);
+        return null;
+    }
+}
+
 export async function updateEvent(id, updates)
 {
     try
     {
-        const response = await fetch(`${API_URL}/events?id=eq.${id}`, {
+        const response = await fetch(`${API_URL}/events?id=eq.${id}&${EVENTS_SELECT}`, {
             method: 'PATCH',
             headers: { ...HEADERS, 'Prefer': 'return=representation' },
             body: JSON.stringify(updates),
@@ -85,5 +114,22 @@ export async function deleteEvent(id)
     {
         console.error('failed to delete event: ', error);
         return false;
+    }
+}
+
+export async function getCategories()
+{
+    try
+    {
+        const response = await fetch(`${API_URL}/categories`, { headers: HEADERS });
+
+        if (!response.ok) { throw new Error(`api error: ${response.status}`); }
+
+        return await response.json();
+    }
+    catch (error)
+    {
+        console.error('failed to fetch categories: ', error);
+        return [];
     }
 }
