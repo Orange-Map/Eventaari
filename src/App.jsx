@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getEvents } from './api'
+import { getEvents, createEvent, updateEvent, deleteEvent } from './api'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -7,16 +7,38 @@ import './App.css'
 import Map from './Map.jsx'
 
 function App() {
-  const [count, setCount] = useState(0);
   const [events, setEvents] = useState([]);
 
   // ai written code, needs to be checked
   useEffect(() => {
       getEvents().then(data => {
-          console.log("events from db: ", data);
           setEvents(data);
       });
   }, []);
+
+  async function handleCreate(newEvent) {
+    const created = await createEvent(newEvent);
+    if (created) {
+      setEvents((prev) => [...prev, created]);
+    }
+    return created;
+  }
+
+  async function handleUpdate(id, updates) {
+    const updated = await updateEvent(id, updates);
+    if (updated) {
+      setEvents((prev) => prev.map((e) => (e.id === id ? updated : e)));
+    }
+    return updated;
+  }
+
+  async function handleDelete(id) {
+    const success = await deleteEvent(id);
+    if (success) {
+      setEvents((prev) => prev.filter((e) => e.id !== id));
+    }
+    return success;
+  }
 
   return (
     <>

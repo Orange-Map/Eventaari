@@ -7,9 +7,12 @@ CREATE TABLE IF NOT EXISTS events (
   starts_at TIMESTAMP NOT NULL,
   lat DECIMAL(10, 6) NOT NULL,
   lng DECIMAL(10, 6) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,<
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- crud for anon 
+GRANT INSERT, UPDATE, DELETE ON events TO anon;
 
 -- inserting fake data for testing purp
 INSERT INTO events (id, name, description, address, starts_at, lat, lng) VALUES
