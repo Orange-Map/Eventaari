@@ -65,3 +65,14 @@
   margin: 0;
 }
 
+.map-event-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 240px;
+  color: #1a1a1a;
+}
+
+.leaflet-popup-content .map-event-card p {
+  margin: 0;
+}

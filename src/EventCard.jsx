@@ -13,7 +13,7 @@ function formatDate(iso) {
 
 export default function EventCard({ event }) {
     return (
-        <article className="event-card">
+        <article className="map-event-card">
             <h3 className="event-card-title">{event.name}</h3>
 
             <p className="event-card-meta">
